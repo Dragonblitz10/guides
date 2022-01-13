@@ -1,0 +1,1352 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="GalaxyGate Guides">
+      
+      
+      
+        <meta name="author" content="GalaxyGate Community">
+      
+      
+        <link rel="canonical" href="https://wiki.galaxygate.net/hosting/discord/javascript/">
+      
+      <link rel="icon" href="../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.2.2, mkdocs-material-7.2.4">
+    
+    
+      
+        <title>JavaScript - GalaxyGate Guides</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.f7f47774.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.3f5d1f46.min.css">
+        
+          
+          
+          <meta name="theme-color" content="#7e56c2">
+        
+      
+    
+    
+    
+      
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
+        <style>:root{--md-text-font-family:"Roboto";--md-code-font-family:"Roboto Mono"}</style>
+      
+    
+    
+    
+    
+      
+
+
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="deep-purple" data-md-color-accent="indigo">
+  
+    
+    <script>function __prefix(e){return new URL("../../..",location).pathname+"."+e}function __get(e,t=localStorage){return JSON.parse(t.getItem(__prefix(e)))}</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#hosting-a-discordjs-bot" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../.." title="GalaxyGate Guides" class="md-header__button md-logo" aria-label="GalaxyGate Guides" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            GalaxyGate Guides
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              JavaScript
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+      </label>
+      
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" aria-label="Clear" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="GalaxyGate Guides" class="md-nav__button md-logo" aria-label="GalaxyGate Guides" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    GalaxyGate Guides
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
+        Home
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" type="checkbox" id="__nav_2" >
+      
+      <label class="md-nav__link" for="__nav_2">
+        Linux Basics
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Linux Basics" data-md-level="1">
+        <label class="md-nav__title" for="__nav_2">
+          <span class="md-nav__icon md-icon"></span>
+          Linux Basics
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../basics/" class="md-nav__link">
+        Index
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../basics/first_login/" class="md-nav__link">
+        Login
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../basics/sudo_user/" class="md-nav__link">
+        Creating Sudo User
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../basics/fix_hostname/" class="md-nav__link">
+        Fix unable to resolve host
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" type="checkbox" id="__nav_3" checked>
+      
+      <label class="md-nav__link" for="__nav_3">
+        Hosting
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Hosting" data-md-level="1">
+        <label class="md-nav__title" for="__nav_3">
+          <span class="md-nav__icon md-icon"></span>
+          Hosting
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../" class="md-nav__link">
+        Index
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_2" type="checkbox" id="__nav_3_2" checked>
+      
+      <label class="md-nav__link" for="__nav_3_2">
+        Discord
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Discord" data-md-level="2">
+        <label class="md-nav__title" for="__nav_3_2">
+          <span class="md-nav__icon md-icon"></span>
+          Discord
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../python/" class="md-nav__link">
+        Python
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          JavaScript
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        JavaScript
+      </a>
+      
+        
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#introduction" class="md-nav__link">
+    Introduction
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#upgrading-packages" class="md-nav__link">
+    Upgrading packages
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#installation" class="md-nav__link">
+    Installation
+  </a>
+  
+    <nav class="md-nav" aria-label="Installation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#nodejs" class="md-nav__link">
+    Node.js
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getting-your-bot-onto-the-vps" class="md-nav__link">
+    Getting your bot onto the VPS
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#running-the-bot" class="md-nav__link">
+    Running the Bot
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#247" class="md-nav__link">
+    24/7
+  </a>
+  
+    <nav class="md-nav" aria-label="24/7">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#screen" class="md-nav__link">
+    Screen
+  </a>
+  
+    <nav class="md-nav" aria-label="Screen">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#installation_1" class="md-nav__link">
+    Installation
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#usage" class="md-nav__link">
+    Usage
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#systemd" class="md-nav__link">
+    systemd
+  </a>
+  
+    <nav class="md-nav" aria-label="systemd">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#installation_2" class="md-nav__link">
+    Installation
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#usage_1" class="md-nav__link">
+    Usage
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pm2" class="md-nav__link">
+    PM2
+  </a>
+  
+    <nav class="md-nav" aria-label="PM2">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#installing-pm2" class="md-nav__link">
+    Installing PM2
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#starting-the-bot" class="md-nav__link">
+    Starting the bot
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#commands" class="md-nav__link">
+    Commands
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pm2-tips" class="md-nav__link">
+    PM2 tips
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#resources" class="md-nav__link">
+    Resources
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4" type="checkbox" id="__nav_4" >
+      
+      <label class="md-nav__link" for="__nav_4">
+        Games
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Games" data-md-level="1">
+        <label class="md-nav__title" for="__nav_4">
+          <span class="md-nav__icon md-icon"></span>
+          Games
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../games/" class="md-nav__link">
+        Index
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_2" type="checkbox" id="__nav_4_2" >
+      
+      <label class="md-nav__link" for="__nav_4_2">
+        Minecraft Java
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Minecraft Java" data-md-level="2">
+        <label class="md-nav__title" for="__nav_4_2">
+          <span class="md-nav__icon md-icon"></span>
+          Minecraft Java
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../games/minecraft/java/paper/" class="md-nav__link">
+        Paper
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../games/minecraft/java/vanilla/" class="md-nav__link">
+        Vanilla
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_3" type="checkbox" id="__nav_4_3" >
+      
+      <label class="md-nav__link" for="__nav_4_3">
+        Minecraft Bedrock
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Minecraft Bedrock" data-md-level="2">
+        <label class="md-nav__title" for="__nav_4_3">
+          <span class="md-nav__icon md-icon"></span>
+          Minecraft Bedrock
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../games/minecraft/bedrock/bedrock/" class="md-nav__link">
+        Bedrock
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../games/minecraft/bedrock/pocketmine/" class="md-nav__link">
+        Pocketmine
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../games/minecraft/bedrock/nukkit/" class="md-nav__link">
+        Nukkit
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_4" type="checkbox" id="__nav_4_4" >
+      
+      <label class="md-nav__link" for="__nav_4_4">
+        Terraria
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Terraria" data-md-level="2">
+        <label class="md-nav__title" for="__nav_4_4">
+          <span class="md-nav__icon md-icon"></span>
+          Terraria
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../games/terraria/pc/" class="md-nav__link">
+        PC
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5" type="checkbox" id="__nav_5" >
+      
+      <label class="md-nav__link" for="__nav_5">
+        Extras
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Extras" data-md-level="1">
+        <label class="md-nav__title" for="__nav_5">
+          <span class="md-nav__icon md-icon"></span>
+          Extras
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../extras/" class="md-nav__link">
+        Index
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5_2" type="checkbox" id="__nav_5_2" >
+      
+      <label class="md-nav__link" for="__nav_5_2">
+        Tools
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Tools" data-md-level="2">
+        <label class="md-nav__title" for="__nav_5_2">
+          <span class="md-nav__icon md-icon"></span>
+          Tools
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../extras/tools/using_nvm/" class="md-nav__link">
+        NVM
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../extras/tools/using_tmate/" class="md-nav__link">
+        Tmate
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#introduction" class="md-nav__link">
+    Introduction
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#upgrading-packages" class="md-nav__link">
+    Upgrading packages
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#installation" class="md-nav__link">
+    Installation
+  </a>
+  
+    <nav class="md-nav" aria-label="Installation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#nodejs" class="md-nav__link">
+    Node.js
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getting-your-bot-onto-the-vps" class="md-nav__link">
+    Getting your bot onto the VPS
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#running-the-bot" class="md-nav__link">
+    Running the Bot
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#247" class="md-nav__link">
+    24/7
+  </a>
+  
+    <nav class="md-nav" aria-label="24/7">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#screen" class="md-nav__link">
+    Screen
+  </a>
+  
+    <nav class="md-nav" aria-label="Screen">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#installation_1" class="md-nav__link">
+    Installation
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#usage" class="md-nav__link">
+    Usage
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#systemd" class="md-nav__link">
+    systemd
+  </a>
+  
+    <nav class="md-nav" aria-label="systemd">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#installation_2" class="md-nav__link">
+    Installation
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#usage_1" class="md-nav__link">
+    Usage
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pm2" class="md-nav__link">
+    PM2
+  </a>
+  
+    <nav class="md-nav" aria-label="PM2">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#installing-pm2" class="md-nav__link">
+    Installing PM2
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#starting-the-bot" class="md-nav__link">
+    Starting the bot
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#commands" class="md-nav__link">
+    Commands
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pm2-tips" class="md-nav__link">
+    PM2 tips
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#resources" class="md-nav__link">
+    Resources
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content" data-md-component="content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                
+                <h1 id="hosting-a-discordjs-bot">Hosting a Discord.js Bot<a class="headerlink" href="#hosting-a-discordjs-bot" title="Permanent link">&para;</a></h1>
+<h2 id="introduction">Introduction<a class="headerlink" href="#introduction" title="Permanent link">&para;</a></h2>
+<p>In this article you will learn:</p>
+<ul>
+<li>What is needed to host a Discord.js Bot.</li>
+<li>How to keep the bot running after closing the SSH session.</li>
+</ul>
+<p>In this article, we assume that:</p>
+<ul>
+<li>You are using discord.js as your library</li>
+<li>You have confirmed that your bot is working locally.</li>
+<li>You know how to establish an SSH connection.</li>
+<li>You know how to use FTP/SFTP to upload files.</li>
+<li>You have a Linux VPS (Debian/Ubuntu).</li>
+</ul>
+<p><em>Don't know how to connect to your server? Check out this <a href="../../../basics/first_login/">guide.</a></em></p>
+<h2 id="upgrading-packages">Upgrading packages<a class="headerlink" href="#upgrading-packages" title="Permanent link">&para;</a></h2>
+<p>To ensure we have a smoother experience we should install some packages which includes some commands we may or may not use in the guide please either make sure you are executing these as root/a user with sudo.</p>
+<div class="codehilite"><pre><span></span><code>apt update &amp;&amp; apt upgrade -y 
+apt install sudo screen curl unzip -y 
+apt install curl dirmngr apt-transport-https lsb-release libgnutls30 ca-certificates -y
+</code></pre></div>
+
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>You should run this first, we use curl later on.</p>
+</div>
+<h2 id="installation">Installation<a class="headerlink" href="#installation" title="Permanent link">&para;</a></h2>
+<h3 id="nodejs">Node.js<a class="headerlink" href="#nodejs" title="Permanent link">&para;</a></h3>
+<p>For a JavaScript discord bot, you will need to have Node.js and npm installed on the server.
+To install Node.js &amp; npm run the commands listed.
+You can choose which version to install if you have a preference however I recommend that you should 
+choose v16.
+V17</p>
+<div class="codehilite"><pre><span></span><code>curl -sL https://deb.nodesource.com/setup_17.x <span class="p">|</span> sudo -E bash -
+sudo apt -y install nodejs
+</code></pre></div>
+
+<p>V16</p>
+<div class="codehilite"><pre><span></span><code>curl -sL https://deb.nodesource.com/setup_16.x <span class="p">|</span> sudo -E bash -
+sudo apt -y install nodejs
+</code></pre></div>
+
+<p>V12</p>
+<div class="codehilite"><pre><span></span><code>curl -sL https://deb.nodesource.com/setup_12.x <span class="p">|</span> sudo -E bash -
+sudo apt -y install nodejs
+</code></pre></div>
+
+<p>v10</p>
+<div class="codehilite"><pre><span></span><code>curl -sL https://deb.nodesource.com/setup_10.x <span class="p">|</span> sudo -E bash -
+sudo apt -y install nodejs
+</code></pre></div>
+
+<p>Verify that node is installed correctly.</p>
+<div class="codehilite"><pre><span></span><code>node -v
+npm -v
+</code></pre></div>
+
+<p><img alt="Node Version" src="../assets/javascript/node_ver.png" /></p>
+<p>If you do not get a response from above or something went wrong, please take a screenshot of what went wrong and ask for help in our <a href="https://discord.gg/jcKEyxn">support server.</a> </p>
+<h3 id="getting-your-bot-onto-the-vps">Getting your bot onto the VPS<a class="headerlink" href="#getting-your-bot-onto-the-vps" title="Permanent link">&para;</a></h3>
+<p>First, you should zip your bot folder (<strong>don't zip your node_modules</strong>) in preparation for what you should do next after you finish zipping your bot files with an SFTP client of your choice, you should upload the zipped file which should contain all your files to the server, you should also remember the name of the zipped file.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Don't have an SFTP client? you can download one <a href="https://filezilla-project.org/download.php?type=client">Here.</a></p>
+</div>
+<div class="codehilite"><pre><span></span><code>unzip bot.zip
+cd botName
+npm install 
+</code></pre></div>
+
+<p><img alt="unzipping" src="../assets/javascript/unzip_bot.gif" /></p>
+<h3 id="running-the-bot">Running the Bot<a class="headerlink" href="#running-the-bot" title="Permanent link">&para;</a></h3>
+<p>You can now start your bot using</p>
+<div class="codehilite"><pre><span></span><code>node filename.js 
+</code></pre></div>
+
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The filename would be the main node file e.g <code>index.js</code>, <code>bot.js</code> or <code>Botname.js</code></p>
+</div>
+<p><img alt="node" src="../assets/javascript/node_start.gif" /></p>
+<p>To exit hit Ctrl + C</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>I: You should always test things before using the methods to ensure the bot can load up fine.</p>
+<p>II: Avoid committing your token to GitHub if you use that.</p>
+<p>III: Do not copy your node_modules folder use npm install, it saves you time and allows the dependencies to be built correctly.</p>
+</div>
+<p>If everything went okay this far, you're left with one issue. While the bot is online on your server, it's only running inside of the current SSH session. Once you end that session, the bot's process gets terminated with it. To prevent this from happening, here are a few different methods:</p>
+<h2 id="247">24/7<a class="headerlink" href="#247" title="Permanent link">&para;</a></h2>
+<p>If you have successfully run the bot from the command line from above without any errors or issues then you should be ready to set up 24/7 bot hosting to keep the bot online.</p>
+<p>This has some advantages over simply running it in an SSH session:</p>
+<ul>
+<li>The bot runs in the background 24/7 unless it crashes.</li>
+<li>The Bot loads itself on reboot so no need to manually run it again.</li>
+<li>Easier to manage via CLI.</li>
+<li>You do not need to actively manage the bot.</li>
+</ul>
+<p>There are multiple ways to run the bot 24/7, feel free to choose the best method for you, personally I recommend pm2.</p>
+<h3 id="screen">Screen<a class="headerlink" href="#screen" title="Permanent link">&para;</a></h3>
+<p>One way of achieving a 24/7 bot would be using screen to keep the bot running in the background</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p><code>screen</code> does not boot on load or write logs to the disk automatically, reboots would kill the screen due to only being a virtual session.</p>
+</div>
+<p>To start your bot with screen, first, make sure you have <code>screen</code> package installed.</p>
+<h4 id="installation_1">Installation<a class="headerlink" href="#installation_1" title="Permanent link">&para;</a></h4>
+<p>You can install screen using the one-liner below:</p>
+<div class="codehilite"><pre><span></span><code>sudo apt update <span class="o">&amp;&amp;</span> sudo apt install screen -y
+</code></pre></div>
+
+<h4 id="usage">Usage<a class="headerlink" href="#usage" title="Permanent link">&para;</a></h4>
+<p>You can then start your bot by using the command below:</p>
+<div class="codehilite"><pre><span></span><code>screen -S &lt;BotName&gt; -L node x
+</code></pre></div>
+
+<div class="admonition hint">
+<p class="admonition-title">Hint</p>
+<p>Replace x with the correct filename for your bot, for example:</p>
+</div>
+<div class="codehilite"><pre><span></span><code>screen -S aero -L node index.js
+</code></pre></div>
+
+<p>This should create a session you can safely leave without fear of it shutting down when you leave, 
+You can leave the screen via <code>CTRL+AD</code> from this session so your bot remains working after you leave.</p>
+<p>You can re-attach to the running screen by running <code>screen -r BotName</code> and then terminate the bot by using <code>CTRL+C</code>.</p>
+<h3 id="systemd">systemd<a class="headerlink" href="#systemd" title="Permanent link">&para;</a></h3>
+<p>You can also use systemd as the service manager for your bot. </p>
+<h4 id="installation_2">Installation<a class="headerlink" href="#installation_2" title="Permanent link">&para;</a></h4>
+<p>Systemd requires a service description file to be created.</p>
+<p>You can create it using your favorite editor and save it to <code>/lib/systemd/system/bot.service</code>:</p>
+<div class="codehilite"><pre><span></span><code><span class="k">[Unit]</span>
+<span class="na">Description</span><span class="o">=</span><span class="s">My Node JS Bot</span>
+<span class="na">After</span><span class="o">=</span><span class="s">multi-user.target</span>
+<span class="k">[Service]</span>
+<span class="na">WorkingDirectory</span><span class="o">=</span><span class="s">/root/botFolder</span>
+<span class="na">User</span><span class="o">=</span><span class="s">root</span>
+<span class="na">ExecStart</span><span class="o">=</span><span class="s">/usr/bin/node index.js</span>
+<span class="na">Type</span><span class="o">=</span><span class="s">simple</span>
+<span class="na">Restart</span><span class="o">=</span><span class="s">always</span>
+<span class="na">RestartSec</span><span class="o">=</span><span class="s">15</span>
+
+<span class="k">[Install]</span>
+<span class="na">WantedBy</span><span class="o">=</span><span class="s">multi-user.target</span>
+</code></pre></div>
+
+<p>You need to replace the proper path for the bot folder as well as the startup command.</p>
+<p>Assuming the bot files are on <code>/root/bot</code> the file will look like this for a discord.js bot:</p>
+<div class="codehilite"><pre><span></span><code><span class="k">[Unit]</span>
+<span class="na">Description</span><span class="o">=</span><span class="s">My wonderful bot</span>
+<span class="na">After</span><span class="o">=</span><span class="s">multi-user.target</span>
+<span class="k">[Service]</span>
+<span class="na">WorkingDirectory</span><span class="o">=</span><span class="s">/root/bot</span>
+<span class="na">User</span><span class="o">=</span><span class="s">root</span>
+<span class="na">ExecStart</span><span class="o">=</span><span class="s">/usr/bin/node bot.js </span>
+<span class="na">Type</span><span class="o">=</span><span class="s">simple</span>
+<span class="na">Restart</span><span class="o">=</span><span class="s">always</span>
+<span class="na">RestartSec</span><span class="o">=</span><span class="s">15</span>
+
+<span class="k">[Install]</span>
+<span class="na">WantedBy</span><span class="o">=</span><span class="s">multi-user.target</span>
+</code></pre></div>
+
+<p>After you finish creating the file, you need to run <code>sudo systemctl daemon-reload</code> which will tell systemd to re-scan for services.</p>
+<h4 id="usage_1">Usage<a class="headerlink" href="#usage_1" title="Permanent link">&para;</a></h4>
+<p>Below are some command usages for systemd.</p>
+<div class="codehilite"><pre><span></span><code>sudo systemctl daemon-reload <span class="c1"># Re-scans for service changes.</span>
+sudo systemctl <span class="nb">enable</span> bot <span class="c1"># Enables auto-start for the service named &#39;bot&#39;.</span>
+sudo systemctl start bot <span class="c1"># Starts the &#39;bot&#39; service.</span>
+sudo systemctl stops bot <span class="c1"># Stops the &#39;bot&#39; service.</span>
+sudo systemctl restart bot <span class="c1"># Restarts the &#39;bot&#39; service.</span>
+</code></pre></div>
+
+<h3 id="pm2">PM2<a class="headerlink" href="#pm2" title="Permanent link">&para;</a></h3>
+<p>PM2 is a process manager for the JavaScript runtime Node.js which can be used to keep node application alive after a killed SSH session. PM2 can easily start/stop/restart your bot as well as provide logging. </p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>PM2 will restart when the bot crashes which can result in a boot loop.</p>
+</div>
+<h4 id="installing-pm2">Installing PM2<a class="headerlink" href="#installing-pm2" title="Permanent link">&para;</a></h4>
+<p>Run the following commands...</p>
+<div class="codehilite"><pre><span></span><code>npm install pm2@latest -g
+</code></pre></div>
+
+<h4 id="starting-the-bot">Starting the bot<a class="headerlink" href="#starting-the-bot" title="Permanent link">&para;</a></h4>
+<div class="codehilite"><pre><span></span><code>pm2 start &lt;botfile.js&gt;
+</code></pre></div>
+
+<p><em>note:</em> Be in the same directory or use absolute paths.</p>
+<h4 id="commands">Commands<a class="headerlink" href="#commands" title="Permanent link">&para;</a></h4>
+<p>To check the status</p>
+<div class="codehilite"><pre><span></span><code>pm2 ls
+</code></pre></div>
+
+<p>To check logs </p>
+<div class="codehilite"><pre><span></span><code>pm2 logs <span class="m">0</span>
+</code></pre></div>
+
+<p>To enable systemd pm2</p>
+<div class="codehilite"><pre><span></span><code>pm2 startup
+</code></pre></div>
+
+<h4 id="pm2-tips">PM2 tips<a class="headerlink" href="#pm2-tips" title="Permanent link">&para;</a></h4>
+<ul>
+<li>Use <code>pm2 save</code> to save the processes.</li>
+<li>Use <code>pm2 resurrect</code> to revive them in the event of a reboot and the processes did not come back.</li>
+<li>PM2 has a web app which can be found <a href="https://pm2.keymetrics.io/">here.</a></li>
+<li><code>pm2 ls</code> will show all the running node instances.</li>
+<li>PM2 commands can be found <a href="https://devhints.io/pm2">here</a></li>
+</ul>
+<h2 id="resources">Resources<a class="headerlink" href="#resources" title="Permanent link">&para;</a></h2>
+<ul>
+<li><a href="https://discord.js.org/#/docs/main/master/general/welcome">discord.js Docs</a></li>
+<li><a href="https://github.com/discordjs/discord.js">discord.js GitHub</a></li>
+<li><a href="https://discordjs.guide/">discord.js Guide</a></li>
+<li><a href="https://discord.gg/bRCvFy9">discord.js Discord</a></li>
+<li><a href="https://github.com/1Computer1/discord.js-frameworks-comparison">discord.js Frameworks</a></li>
+<li><a href="https://pm2.keymetrics.io/docs/usage/quick-start/">PM2 Docs</a></li>
+</ul>
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+        
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <nav class="md-footer__inner md-grid" aria-label="Footer">
+      
+        
+        <a href="../python/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Python" rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+          </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              Python
+            </div>
+          </div>
+        </a>
+      
+      
+        
+        <a href="../../../games/" class="md-footer__link md-footer__link--next" aria-label="Next: Index" rel="next">
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              Index
+            </div>
+          </div>
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
+          </div>
+        </a>
+      
+    </nav>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+        Made with
+        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+          Material for MkDocs
+        </a>
+        
+      </div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    <script id="__config" type="application/json">{"base": "../../..", "features": [], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../../../assets/javascripts/workers/search.709b4209.min.js", "version": null}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.febc23d1.min.js"></script>
+      
+    
+  </body>
+</html>
